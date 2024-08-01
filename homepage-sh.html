@@ -17,53 +17,82 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
     <style>
+
+:root {
+            --dark-color: #2a3133;
+        }
+
+        .navbar-custom {
+            background-color: var(--dark-color);
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link,
+        .navbar-custom .dropdown-menu,
+        .navbar-custom .dropdown-item {
+            color: #2a3133;
+        }
+
+        .navbar-toggler {
+            border-color: #2a3133;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #2a3133;
+        }
+
+        .dropdown-menu {
+            background-color: var(--dark-color);
+        }
+    
     .tm-catalog-item {
     display: flex;
     flex-direction: column;
     height: 600px;
     position: relative;
-}
+    }
 
-.tm-catalog-item-description {
+    .tm-catalog-item-description {
     flex-grow: 1;
-}
+    }
 
-.tm-catalog-item .view-more-btn {
+    .tm-catalog-item .view-more-btn {
     position: absolute; 
     bottom: 10px;
-}
-        body {
-            background-color: #929494;
-            font-family: var(--body-font-family); 
-        }
+    }
+    body {
+    background-color: #929494;
+    font-family: var(--body-font-family); 
+    }
     </style>
 </head>
 
 <body>
     <main>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="index.html" style="color: #aba4aa">
+                <a class="navbar-brand" href="index.html" style="color: #aba4aa;">
                     zsarchitecture
                 </a>
-
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_1" id="home">Ballina</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_2" id="projects">Projekte</a>
                         </li>
                     </ul>
-                    <div class="dropdown">
-                        <button class="btn custom-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style=" color: white;">
+                    <div class="dropdown ms-lg-3">
+                        <button class="btn custom-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
                             Gjuha
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="homepage.html">Anglisht</a></li>
-                            <li><a class="dropdown-item" href="homepage-sh.html">Shqip</a></li>
+                            <li><a class="dropdown-item" href="homepage.html">English</a></li>
+                            <li><a class="dropdown-item" href="homepage-sh.html">Albanian</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,9 +122,52 @@
                                         </div>
                                         <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                             <h3 class="tm-text-primary mb-3 tm-catalog-item-title" id="beauty_salon">Salloni i Bukurisë</h3>
-                                            <p class="tm-catalog-item-text" id="beauty_salon_desc">Zbuloni kulmin e bukurisë dhe relaksimit në sallonin tonë luksoz të bukurisë. Hyni në një botë përkëdhelje dhe dilni të ndiheni të freskuar, të sigurt dhe të bukur.</p>
+                                            <p class="tm-catalog-item-text" id="beauty_salon_desc">Transformoni përvojën tuaj të bukurisë në sallonin tonë luksoz të sapo dizajnuar. I krijuar me vëmendje të hollësishme ndaj detajeve, çdo hapësirë kombinon elegancën dhe komoditetin, duke krijuar një atmosferë të relaksimit të fundit.</p>
                                             <a href="beauty-salon.html" class="btn btn-secondary btn-sm view-more-btn" id="view_more_1">Shiko më shumë</a>
                                         </div>
+                                    </div>
+                                    
+
+                                    <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                                        <div class="position-relative tm-thumbnail-container">
+                                            <img src="images/projekte/garderoba/1_3 - Photo.jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('garderobe')">
+                                              </div>
+                                         
+                                        <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                            <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Garderobe</h3>
+                                            <p class="tm-catalog-item-text">
+                                                Garderobe me hapsire te mjaftueshme duke e bere shume me te shfrytezueshme per pergaditje dhe shfrytezim.
+                                                Raftat/dollapat me xhama qe te kemi palmje te gjerave qe deshirojme te marrim.
+                                                Tavolina e grimit me pasqyre dhe ndriqim te mjaftueshem.                                                
+                                            </p>
+                                                <a href="garderobe.html" class="btn btn-secondary btn-sm view-more-btn">Shiko më shumë</a>
+                                            </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                                        <div class="position-relative tm-thumbnail-container">
+                                            <img src="images/projekte/dyqan/1_2 - Photo (1).jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('dyqan')">
+                                              </div>
+                                         
+                                        <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                            <h3 class="tm-text-primary mb-3 tm-catalog-item-title">
+                                                Dyqan rrobash per meshkuj</h3>
+                                            <p class="tm-catalog-item-text">
+                                            Dizajni i ketij dyqani u koncentrua me shume tek perdorimi i ngjyrave me te erreta.
+                                            Perdorimi i rrjetave tek muret me hapje qe ti japin pamje me te vrazhdte amientit, shanku me forme organike duke dhuruar nje thyrje te vrazhdesise. 
+                                            </p>
+                                        <a href="dyqan.html" class="btn btn-secondary btn-sm view-more-btn">Shiko më shumë</a>
+                                            </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                                        <div class="position-relative tm-thumbnail-container">
+                                            <img src="images/projekte/shtepibanimi/1_4 - Photo (2).jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('shtepibanimi')">
+                                              </div>
+                                         
+                                        <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                            <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Shtepi banimi</h3>
+                                            <p class="tm-catalog-item-text">Një shtëpi banimi me bazë rrethore, e krijuar sipas kërkesave të klientit dhe që ofron ambiente mikpritëse me kënde të ndryshme brenda shtëpisë. Shtëpi P+1
+                                            </p> <a href="shtepibanimi.html" class="btn btn-secondary btn-sm view-more-btn">Shiko më shumë</a>
+                                            </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                                         <div class="position-relative tm-thumbnail-container">
@@ -113,7 +185,7 @@
                                         </div>
                                         <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                             <h3 class="tm-text-primary mb-3 tm-catalog-item-title" id="modern_restaurant">Restorant Modern</h3>
-                                            <p class="tm-catalog-item-text" id="modern_restaurant_desc">Përjetoni bashkimin e shijeve të shkëlqyera dhe ambientit bashkëkohor në restorantin tonë modern. Qoftë duke u mbledhur me të dashurit tuaj apo thjesht duke kërkuar një përvojë të këndshme ngrënieje, restoranti ynë pret të kënaqë shqisat tuaja.</p>
+                                            <p class="tm-catalog-item-text" id="modern_restaurant_desc">Zbuloni përzierjen e shijeve të hollësishme dhe ambientit modern në restorantin tonë të ri. Çdo detaj i brendshëm është krijuar me kujdes për të ofruar një hapësirë të këndshme, perfekte për takime ose një përvojë të mrekullueshme të ngrënies.</p>
                                             <a href="restaurant.html" class="btn btn-secondary btn-sm view-more-btn" id="view_more_3">Shiko më shumë</a>
                                         </div>
                                     </div>
@@ -123,7 +195,7 @@
                                         </div>
                                         <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                             <h3 class="tm-text-primary mb-3 tm-catalog-item-title" id="glass_house">Shtëpia e Qelqtë</h3>
-                                            <p class="tm-catalog-item-text" id="glass_house_desc">Krijimi i shtëpive të ëndrrave në re para se të zbresin në tokë 🏠</p>
+                                            <p class="tm-catalog-item-text" id="glass_house_desc">Duke sjellë në jetë shtëpitë e ëndrrave, duke filluar në programin tonë 3D para se të zbresin në tokë 🏠. Çdo shtëpi ka pamje të mrekullueshme dhe një pishinë të bukur, të dizajnuar me kujdes për të ndërthurur luksin dhe komoditetin për një hapësirë jetese të qetë dhe mikpritëse.</p>
                                             <a href="shpija.html" class="btn btn-secondary btn-sm view-more-btn" id="view_more_4">Shiko më shumë</a>
                                         </div>
                                     </div>

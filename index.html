@@ -24,24 +24,51 @@
     <body>
         
         <style>
-            .tm-catalog-item {
-            display: flex;
-            flex-direction: column;
-            height: 600px; /* Fixed height for project boxes */
-            position: relative; /* Position relative for absolute positioning of buttons */
-        }
-        
-        .tm-catalog-item-description {
-            flex-grow: 1;
-        }
-        
-        .tm-catalog-item .view-more-btn {
-            position: absolute; 
-            bottom: 10px; /* Adjust as needed */
-        }
+            :root {
+                        --dark-color: #2a3133;
+                    }
+            
+                    .navbar-custom {
+                        background-color: var(--dark-color);
+                    }
+            
+                    .navbar-custom .navbar-brand,
+                    .navbar-custom .nav-link,
+                    .navbar-custom .dropdown-menu,
+                    .navbar-custom .dropdown-item {
+                        color: #2a3133;
+                    }
+            
+                    .navbar-toggler {
+                        border-color: #2a3133;
+                    }
+            
+                    .navbar-toggler-icon {
+                        background-color: #2a3133;
+                    }
+            
+                    .dropdown-menu {
+                        background-color: var(--dark-color);
+                    }
+                
+                .tm-catalog-item {
+                display: flex;
+                flex-direction: column;
+                height: 600px;
+                position: relative;
+                }
+            
+                .tm-catalog-item-description {
+                flex-grow: 1;
+                }
+            
+                .tm-catalog-item .view-more-btn {
+                position: absolute; 
+                bottom: 10px;
+                }
                 body {
-                    background-color: #5a6366;
-                    font-family: var(--body-font-family); 
+                background-color: #929494;
+                font-family: var(--body-font-family); 
                 }
             </style>
 
@@ -50,31 +77,32 @@
   </div>
 
         <main>
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg navbar-dark">
                 <div class="container">
-                    <a class="navbar-brand" href="index.html" style="color: #aba4aa">
+                    <a class="navbar-brand" href="index.html" style="color: #aba4aa;">
                         zsarchitecture
                     </a>
-    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                <a class="nav-link click-scroll" href="#section_1" id="home">Home</a>
                             </li>
-    
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">Projects</a>
+                                <a class="nav-link click-scroll" href="#section_2" id="projects">Projects</a>
                             </li>
-                            <div class="dropdown">
-                                <button class="btn custom-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style=" color: white;">
-                                    Language
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="homepage.html">English</a></li>
-                                    <li><a class="dropdown-item" href="homepage-sh.html">Albanian</a></li>
-                                </ul>
-                            </div>
                         </ul>
+                        <div class="dropdown ms-lg-3">
+                            <button class="btn custom-btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                                Language
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="homepage.html">English</a></li>
+                                <li><a class="dropdown-item" href="homepage-sh.html">Albanian</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -106,11 +134,53 @@
                                              
                                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Beauty Salon</h3>
-                                                <p class="tm-catalog-item-text">Discover the epitome of beauty and relaxation at our luxurious beauty salon. 
-                                                    Step into a world of pampering and leave feeling refreshed, confident, and beautiful.</p>
-                                                    <a href="beauty-salon.html" class="btn btn-secondary btn-sm view-more-btn">View More</a> <!-- Button added -->
+                                                <p class="tm-catalog-item-text">Transform your beauty experience at our newly designed luxury salon. Crafted with exquisite attention to detail, each space combines elegance and comfort, creating an ambiance of ultimate relaxation.</p>
+                                                    <a href="beauty-salon.html" class="btn btn-secondary btn-sm view-more-btn">View More</a> 
                                                 </div>
                                         </div>
+
+
+                                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                                            <div class="position-relative tm-thumbnail-container">
+                                                <img src="images/projekte/garderoba/1_3 - Photo.jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('garderobe')">
+                                                  </div>
+                                             
+                                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Wardrobe</h3>
+                                                <p class="tm-catalog-item-text">
+                                                Wardrobe with enough space, making it much more usable for preparation and use.
+                                                Shelves/cupboards with glass so that we have a better view of the things we want to get.
+                                                Makeup table with mirror and sufficient lighting.
+                                                </p>
+                                                    <a href="garderobe.html" class="btn btn-secondary btn-sm view-more-btn">View More</a>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                                            <div class="position-relative tm-thumbnail-container">
+                                                <img src="images/projekte/dyqan/1_2 - Photo (1).jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('dyqan')">
+                                                  </div>
+                                             
+                                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Men's clothing store</h3>
+                                                <p class="tm-catalog-item-text">
+                                                    The design of this store focused more on the use of darker colors.
+                                                    The use of nets on the walls with openings that give the room a rougher look, the organically shaped shank giving a break in the roughness.</p>
+                                                    <a href="dyqan.html" class="btn btn-secondary btn-sm view-more-btn">View More</a>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
+                                            <div class="position-relative tm-thumbnail-container">
+                                                <img src="images/projekte/shtepibanimi/1_4 - Photo (2).jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('shtepibanimi')">
+                                                  </div>
+                                             
+                                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
+                                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Residential house</h3>
+                                                <p class="tm-catalog-item-text">A residential house with a circular base, designed according to the client's requirements and offering welcoming environments with various corners within the house. Two-story house (P+1).</p>
+                                                    <a href="shtepibanimi.html" class="btn btn-secondary btn-sm view-more-btn">View More</a>
+                                                </div>
+                                        </div>
+
+
                                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                                             <div class="position-relative tm-thumbnail-container">
                                                 <img src="images/projekte/kafe/1.jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('Scafe')">    
@@ -130,8 +200,7 @@
                                             </div>                            
                                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Modern restaurant</h3>
-                                                <p class="tm-catalog-item-text">Experience the fusion of exquisite flavors and contemporary ambiance at our modern restaurant.
-                                                    Whether you're gathering with loved ones or simply seeking a delightful dining experience, our restaurant awaits to delight your senses.</p>
+                                                <p class="tm-catalog-item-text">Discover the fusion of exquisite flavors and contemporary ambiance at our newly designed modern restaurant. Every detail of the interior has been meticulously crafted to create a welcoming space perfect for gatherings or a delightful dining experience.</p>
                                                     <a href="restaurant.html" class="btn btn-secondary btn-sm view-more-btn">View More</a> 
                                                 </div>
                                         </div>
@@ -141,7 +210,7 @@
                                             </div>    
                                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Glass House</h3>
-                                                <p class="tm-catalog-item-text">Creating dream homes in the clouds before they land on earth 🏠</p>
+                                                <p class="tm-catalog-item-text">Bringing dream homes to life, starting in our 3D program before they land on earth 🏠. Each home boasts stunning views and a beautiful pool, thoughtfully designed to blend luxury and comfort for a peaceful and inviting living space.</p>
                                                 <a href="shpija.html" class="btn btn-secondary btn-sm view-more-btn">View More</a> </div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
@@ -157,7 +226,7 @@
                                         </div>
                                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                                             <div class="position-relative tm-thumbnail-container">
-                                                <img src="images/projekte/shtepi 2ps/1_1 - Photo.jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('shtepi_2ps')">    
+                                                <img src="images/projekte/shtepi 2ps/1_2 - Photo.jpg" alt="Image" class="img-fluid tm-catalog-item-img" onclick="navigateToProject('shtepi_2ps')">    
                                             </div>                            
                                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
                                                 <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Modern House</h3>
